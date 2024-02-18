@@ -1,0 +1,19 @@
+ procedure GetFieldIndex(TabNo: Integer; FieldNo: Integer): Integer;
+
+    var
+
+        RecField: Record Field;
+
+    begin
+
+        if (TabNo = 0) or (FieldNo = 0) then
+
+            exit(0);
+
+        RecField.SetRange(TableNo, TabNo);
+
+        RecField.SetRange(RecField."No.", 0, FieldNo);
+
+        exit(RecField.Count());
+
+    end;
